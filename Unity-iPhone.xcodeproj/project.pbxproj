@@ -142,16 +142,6 @@
 			name = "Unity Phony Postprocess Target";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45421CFDF3BB0771F6F33FBE /* AppLovinQualityService Embed Framework */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "AppLovinQualityService Embed Framework";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7F4E059E2717216D00A2CBE4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -648,7 +638,6 @@
 				681AA63C19788ACA381FB8C1 /* LaunchScreen-iPhonePortrait.png */,
 				B75948AD9B88EEB0B93FDF80 /* Dummy.swift */,
 				A08BB0D74A1498A66DFD2F27 /* Pods */,
-				84B7C5A334F968C5D061694B /* AppLovinQualityService */,
 				0BBB481BA57F9DD03304B685 /* AppLovin-Settings.plist */,
 			);
 			name = CustomTemplate;
@@ -925,13 +914,6 @@
 			path = AppLovin;
 			sourceTree = "<group>";
 		};
-		84B7C5A334F968C5D061694B /* AppLovinQualityService */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = AppLovinQualityService;
-			sourceTree = "<group>";
-		};
 		8A3EDDC51615B7C1001839E9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1167,8 +1149,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Unity-iPhone" */;
 			buildPhases = (
-				05FE832C3259DF56E53FDEBE /* AppLovinQualityService Updater */,
-				45421CFDF3BB0771F6F33FBE /* AppLovinQualityService Embed Framework */,
 				EB16FE684F3B6F8AE3DCA787 /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				83D0C1FD0E6C8D7700EBCE5D /* CopyFiles */,
@@ -1177,7 +1157,6 @@
 				9D25ABAB213FB47800354C27 /* Embed Frameworks */,
 				0E53F9E733369A878EE0FAC1 /* Unity Phony Postprocess Target */,
 				D4BF5B853AEA9FBFC39E33E9 /* Unity Process symbols for Unity-iPhone */,
-				0EE1E6B75AF3896FB725B297 /* AppLovinQualityService */,
 			);
 			buildRules = (
 			);
@@ -1336,48 +1315,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05FE832C3259DF56E53FDEBE /* AppLovinQualityService Updater */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "AppLovinQualityService Updater";
-			outputPaths = (
-				AppLovinQualityService/AppLovinQualityServicePlugin.app,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "ruby \"AppLovinQualityServiceSetup.rb\" update";
-		};
-		0EE1E6B75AF3896FB725B297 /* AppLovinQualityService */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				AppLovinQualityService/AppLovinQualityServicePlugin.app,
-				AppLovinQualityService/AppLovinQualityServicePlugin.app/Contents/Info.plist,
-				AppLovinQualityService/AppLovinQualityServicePlugin.app/Contents/MacOS/AppLovinQualityServicePlugin,
-				AppLovinQualityService/AppLovinQualityServicePlugin.app/Contents/Resources,
-				AppLovinQualityService/AppLovinQualityServicePlugin.app/Contents/Info.plist,
-				AppLovinQualityService/AppLovinQualityServicePlugin.app/Contents/MacOS/AppLovinQualityServicePlugin,
-				"$(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)",
-				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
-				"$(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)/UnityFramework.framework/UnityFramework",
-				AppLovinQualityServiceSetup.rb,
-			);
-			name = AppLovinQualityService;
-			outputPaths = (
-				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_FOLDER_PATH)/.AppLovinQualityService/AppLovinQualityService.json",
-				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_FOLDER_PATH)/.AppLovinQualityService/AppLovinQualityServiceRanges.json",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "AppLovinQualityService/AppLovinQualityServicePlugin.app/Contents/MacOS/AppLovinQualityServicePlugin \"AppLovinQualityServiceSetup.rb\"";
-		};
 		6E1E4F1B8F1F395756E8C231 /* Unity Process symbols for UnityFramework */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1816,7 +1753,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/AppLovinQualityService",
 				);
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -1966,7 +1902,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/AppLovinQualityService",
 				);
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -2605,7 +2540,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/AppLovinQualityService",
 				);
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
@@ -2653,7 +2587,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/AppLovinQualityService",
 				);
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
