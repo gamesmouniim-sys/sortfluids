@@ -28,24 +28,27 @@ workflows:
           - ShahzadCer                         # ← YOUR cert name in Codemagic
 
     scripts:
-      # 1. Apply the provisioning profile & certificate to the Xcode project
+      - name: Install CocoaPods
+        script: |
+          cd $CM_BUILD_DIR
+          pod install
+
       - name: Set up code signing
         script: xcode-project use-profiles
 
-      # 2. Build & archive — Unity always exports as Unity-iPhone.xcodeproj
       - name: Build IPA
         script: |
           xcodebuild \
-            -project "Unity-iPhone.xcodeproj" \
+            -workspace "Unity-iPhone.xcworkspace" \
             -scheme "Unity-iPhone" \
             -configuration Release \
-            -archivePath "$CM_BUILD_DIR/ColorBlast.xcarchive" \
+            -archivePath "$CM_BUILD_DIR/SortFluids.xcarchive" \
             archive
 
           xcodebuild \
             -exportArchive \
-            -archivePath "$CM_BUILD_DIR/ColorBlast.xcarchive" \
-            -exportOptionsPlist export_options.plist \
+            -archivePath "$CM_BUILD_DIR/SortFluids.xcarchive" \
+            -exportOptionsPlist "$CM_BUILD_DIR/export_options.plist" \
             -exportPath "$CM_BUILD_DIR/ipa"
 
     # The IPA produced by the build step

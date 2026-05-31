@@ -23,7 +23,6 @@
 		574A8D1BFDF4103B13A6538A /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21ECD27EDF8EB21168769097 /* GameController.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		622EA33CCC286E2C00CCC83D /* MAUnityAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C39F90C0DE6DA18724666AF4 /* MAUnityAdManager.m */; };
 		63ACF7178776C648B96974EB /* baselib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD8D832DF5E49F3229DE515 /* baselib.a */; };
-		6C683C6B454D8C78373A795F /* AppLovinQualityService.xcframework in AppLovinQualityService Embed Framework */ = {isa = PBXBuildFile; fileRef = C7605DD8125BDAC4F6129D80 /* AppLovinQualityService.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7F4E05AB2717219200A2CBE4 /* libGameAssembly.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F4E05A02717216D00A2CBE4 /* libGameAssembly.a */; };
 		81BA2D561187A381413586CC /* ATTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 312DD5FEBD0198D70627200E /* ATTManager.m */; };
 		826E40C67FAA509B29A0EFA3 /* IUnityGraphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 30347B5D7991A325732A4F10 /* IUnityGraphics.h */; };
@@ -102,7 +101,6 @@
 		9E277B346B541C2D072C5489 /* IUnityGraphicsMetal.h in Headers */ = {isa = PBXBuildFile; fileRef = 894C1B251937BE1BC2B4D36C /* IUnityGraphicsMetal.h */; };
 		BEE3E21D322649C83B0DD4DC /* LaunchScreen-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A3A1B4C3FB1FC90023B942E /* LaunchScreen-iPhone.storyboard */; };
 		CCA54BED9ED1ADBD36F3852C /* AppLovin-Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BBB481BA57F9DD03304B685 /* AppLovin-Settings.plist */; };
-		D37D64B94241B85112FE9E69 /* AppLovinQualityService.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7605DD8125BDAC4F6129D80 /* AppLovinQualityService.xcframework */; };
 		D58CE7356B184E3C2A593F6F /* MAUnityAdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C58AD3BD2CFE5AD1D4DA8D50 /* MAUnityAdManager.h */; };
 		D617422428557C105323E99C /* Pods_UnityFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664514FF590B36471125B3B0 /* Pods_UnityFramework.framework */; };
 		EB064A1684CB37E058E1D96A /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B84C839EAC1CD9C44DBE9A /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -150,7 +148,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6C683C6B454D8C78373A795F /* AppLovinQualityService.xcframework in AppLovinQualityService Embed Framework */,
 			);
 			name = "AppLovinQualityService Embed Framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,7 +466,6 @@
 		C50842BBA43150F630207E41 /* AppLovinSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AppLovinSDK.xcframework; path = "Pods/AppLovinSDK/applovin-ios-sdk-13.6.2/AppLovinSDK.xcframework"; sourceTree = SOURCE_ROOT; };
 		C58AD3BD2CFE5AD1D4DA8D50 /* MAUnityAdManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MAUnityAdManager.h; path = Libraries/MaxSdk/AppLovin/Plugins/iOS/MAUnityAdManager.h; sourceTree = SOURCE_ROOT; };
 		C74C563E02CE38C5DC9590E7 /* Generics__2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Generics__2.cpp; path = Il2CppOutputProject/Source/il2cppOutput/Generics__2.cpp; sourceTree = SOURCE_ROOT; };
-		C7605DD8125BDAC4F6129D80 /* AppLovinQualityService.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:B8HZ37M8S5:SafeDK Mobile Ltd."; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; name = AppLovinQualityService.xcframework; path = AppLovinQualityService/AppLovinQualityService.xcframework; sourceTree = "<group>"; };
 		C862D3A89A9BA3E4ED7205BD /* System.Configuration_CodeGen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = System.Configuration_CodeGen.c; path = Il2CppOutputProject/Source/il2cppOutput/System.Configuration_CodeGen.c; sourceTree = SOURCE_ROOT; };
 		C865CD21D06B3F35209C5FA5 /* Generics__7.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Generics__7.cpp; path = Il2CppOutputProject/Source/il2cppOutput/Generics__7.cpp; sourceTree = SOURCE_ROOT; };
 		C89119454D57EDC42A59D87C /* UnityEngine.TextRenderingModule.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UnityEngine.TextRenderingModule.cpp; path = Il2CppOutputProject/Source/il2cppOutput/UnityEngine.TextRenderingModule.cpp; sourceTree = SOURCE_ROOT; };
@@ -542,7 +538,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D37D64B94241B85112FE9E69 /* AppLovinQualityService.xcframework in Frameworks */,
 				31C0DCFF4F05A971CA8BBBDB /* Pods_Unity_iPhone.framework in Frameworks */,
 				EB064A1684CB37E058E1D96A /* AppTrackingTransparency.framework in Frameworks */,
 				8C4B4D3CB686919CCA3E2913 /* AdSupport.framework in Frameworks */,
@@ -933,7 +928,6 @@
 		84B7C5A334F968C5D061694B /* AppLovinQualityService */ = {
 			isa = PBXGroup;
 			children = (
-				C7605DD8125BDAC4F6129D80 /* AppLovinQualityService.xcframework */,
 			);
 			name = AppLovinQualityService;
 			sourceTree = "<group>";
