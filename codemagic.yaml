@@ -1,0 +1,71 @@
+workflows:
+  ios-testflight:
+    name: Sort in Fluids
+    max_build_duration: 60   # minutes; increase if builds time out
+
+    # ── App Store Connect integration ────────────────────────────────────
+    # In Codemagic UI → Teams → Integrations → App Store Connect
+    # create an API key and name it exactly as written below.
+    integrations:
+      app_store_connect: Ajwah Shahzad   # ← rename to match your Codemagic integration name
+
+    environment:
+      xcode: latest
+
+      ios_signing:
+        # ── REPLACE these three values with your actual Codemagic names ──
+        #
+        # bundle_identifier : the Bundle ID from your App Store Connect app
+        #                     (Settings → App Information → Bundle ID)
+        # provisioning_profiles : the name you gave the profile when you
+        #                     uploaded it to Codemagic (Code signing identities)
+        # certificates       : the name you gave the .p12 certificate in Codemagic
+        #
+        bundle_identifier: com.sortfluids.ajwah        # ← YOUR bundle ID
+        provisioning_profiles:
+          - SortPro                             # ← YOUR profile name in Codemagic
+        certificates:
+          - ShahzadCer                         # ← YOUR cert name in Codemagic
+
+    scripts:
+      # 1. Apply the provisioning profile & certificate to the Xcode project
+      - name: Set up code signing
+        script: xcode-project use-profiles
+
+      # 2. Build & archive — Unity always exports as Unity-iPhone.xcodeproj
+      - name: Build IPA
+        script: |
+          xcodebuild \
+            -project "Unity-iPhone.xcodeproj" \
+            -scheme "Unity-iPhone" \
+            -configuration Release \
+            -archivePath "$CM_BUILD_DIR/ColorBlast.xcarchive" \
+            archive
+
+          xcodebuild \
+            -exportArchive \
+            -archivePath "$CM_BUILD_DIR/ColorBlast.xcarchive" \
+            -exportOptionsPlist export_options.plist \
+            -exportPath "$CM_BUILD_DIR/ipa"
+
+    # The IPA produced by the build step
+    artifacts:
+      - $CM_BUILD_DIR/ipa/*.ipa
+      - $CM_BUILD_DIR/*.xcarchive   # keep archive for dSYM / crash symbolication
+
+    publishing:
+      # Email notifications on build result
+      email:
+        recipients:
+          - moja.stores@gmail.com
+        notify:
+          success: true
+          failure: true
+
+      # Auto-upload to TestFlight after a successful build
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        # Uncomment the lines below when you're ready to ship to the App Store:
+        # submit_to_app_store: true
+        # release_type: MANUAL   # or AFTER_APPROVAL
